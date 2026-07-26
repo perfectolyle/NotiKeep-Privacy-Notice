@@ -2,7 +2,7 @@
 
 **Last updated: 26 July 2026**
 
-Kepta (`com.imperfect.kepta`) is a notification archive that runs entirely on your
+Kepta is a notification archive that runs entirely on your
 phone. This policy explains exactly what it stores, where it stays, and what it
 never does.
 
@@ -25,9 +25,15 @@ To do its job, Kepta uses Android's **Notification Access** permission. Android
 delivers every notification your phone shows to any app holding that permission,
 so Kepta technically receives all of them.
 
-It only **saves** notifications from apps you have explicitly switched on in
-Settings → Apps. Notifications from every other app are discarded immediately and
+By default it only **saves** notifications that are actual messages — those an app
+sends using Android's messaging notification format. Everything else, including
+games, promotions, delivery updates and system alerts, is discarded immediately and
 never written to storage.
+
+Messaging apps are recorded automatically so that a conversation is not lost before
+you notice the app exists. You can switch off any app, or any individual
+conversation, in **Settings → Apps**. Turning one off stops all further recording
+from it.
 
 For the apps you enable, Kepta stores:
 
@@ -37,8 +43,22 @@ For the apps you enable, Kepta stores:
 - The date and time the message was sent
 - The name of the app that sent it
 - Preview images, when an app attaches one to its notification
+- Profile pictures, when a notification carries one, so a conversation can be
+  recognised at a glance
 - Whether the sender later deleted the message
 - A copy of the app's icon, so conversations can be identified offline
+
+## Alerts, if you ask for them
+
+Non-message notifications — game announcements, promotions, delivery updates,
+system notices — are **never recorded unless you switch them on** for a specific app
+in **Settings → Apps**. They are off for every app until you say otherwise.
+
+When you do switch one on, Kepta stores that app's notification title, body text,
+the time it arrived, and any attached image. These are kept in a separate **Alerts**
+tab, apart from your conversations, and are covered by the same retention settings
+and the same delete controls as everything else. Switching the app back off stops
+all further recording from it.
 
 ## What Kepta never does
 
@@ -62,7 +82,9 @@ files in that same private area.
 
 ## What you control
 
-- **Which apps are recorded.** Nothing is saved until you switch an app on.
+- **Which apps are recorded.** Messaging apps start enabled; switch off any you
+  do not want kept.
+- **Whether alerts are recorded at all.** Off for every app until you turn it on.
 - **Individual conversations.** You can stop recording a single conversation
   without disabling the whole app.
 - **How long anything is kept** (see below).
